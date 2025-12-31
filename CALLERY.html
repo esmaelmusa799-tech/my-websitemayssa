@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>المعرض | Gallery</title>
+  <!-- استدعاء مكتبة Lightbox2 -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: "Tahoma", sans-serif;
+      background-color: #fffaf0; /* خلفية أوف وايت (كريمي فاتح جداً) */
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 20px;
+      color: #d2697f; /* لون نص خوخي داكن لإبراز العنوان */
+    }
+
+    /* زر إضافة صورة */
+    .upload-btn {
+      margin: 15px;
+      padding: 10px 20px;
+      background-color: #ffb07c; /* خوخي متوسط */
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .upload-btn:hover {
+      background-color: #f28c6a; /* خوخي أغمق عند التحويم */
+      transform: translateY(-2px);
+    }
+
+    /* شبكة الصور */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 15px;
+      padding: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 500px;            /* ارتفاع ثابت لكل الصور */
+      object-fit: cover;        /* قص الصورة لتناسب الإطار */
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(255, 182, 193, 0.4); /* ظل وردي ناعم (Baby Pink) */
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      border: 3px solid #ffe4e1; /* إطار وردي باهت لإضافة لمسة جمالية */
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin: 30px;
+      font-size: 14px;
+      color: #a0522d; /* بني فاتح يميل للخوخي */
+    }
+
+    /* تنسيق الأزرار */
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* مسافة بين الأزرار */
+  margin: 20px 0;
+}
+
+.nav-buttons a,
+.nav-buttons button {
+  background-color: #dcdcdc; /* رمادي فاتح */
+  color: #333;              /* نص داكن ليتباين */
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;    /* إزالة الخط تحت الرابط */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+/* تأثير عند التحويم */
+.nav-buttons a:hover,
+.nav-buttons button:hover {
+  background-color: #bfbfbf; /* رمادي أغمق قليلاً */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+/* عند الضغط */
+.nav-buttons a:active,
+.nav-buttons button:active {
+  transform: scale(0.97);
+}
+
+</style>
+
+</head>
+<body>
+<div>
+  <h1> معرض أعمال الكروشيه</h1>
+  <p> هنا نعرض نتائج تعلمك وثمرة اجتهادك </p>
+
+  <!-- زر رفع الصور -->
+  <input type="file" id="imageUpload" accept="image/*" style="display:none">
+  <button class="upload-btn" onclick="document.getElementById('imageUpload').click()">➕ إضافة صورة جديدة</button>
+
+  <!-- شبكة الصور -->
+  <div class="gallery" id="gallery">
+    <a href="Z1.JFIF" data-lightbox="crochet" data-title="مشروع 1">
+      <img src="Z1.JFIF" alt="كروشيه 1">
+    </a>
+    <a href="Z2.JFIF" data-lightbox="crochet" data-title="مشروع 2">
+      <img src="Z2.JFIF" alt="كروشيه 2">
+    </a>
+    <a href="Z3.JFIF" data-lightbox="crochet" data-title="مشروع 3">
+      <img src="Z3.JFIF" alt="كروشيه 3">
+    </a>
+    <a href="Z4.JFIF" data-lightbox="crochet" data-title="مشروع 4">
+      <img src="Z4.JFIF" alt="كروشيه 4">
+    </a>
+    <a href="Z5.JFIF" data-lightbox="crochet" data-title="مشروع 5">
+      <img src="Z5.JFIF" alt="كروشيه 5">
+    </a>
+  </div>
+  <div class="nav-buttons">
+      <a href="PROJECT.html" class="btn btn-primary">السابق</a>
+      <a href="MASEG.html" class="btn btn-primary">التالي</a>
+    </div>
+    
+  <footer>
+    <footer>© 2025 Crochet Studio</footer>
+  </footer>
+</div>
+  <!-- استدعاء مكتبة Lightbox2 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
+  <script>
+    // إضافة الصورة الجديدة في بداية الشبكة
+    document.getElementById('imageUpload').addEventListener('change', function(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          const gallery = document.getElementById('gallery');
+          const link = document.createElement('a');
+          link.href = e.target.result;
+          link.setAttribute('data-lightbox', 'crochet');
+          link.setAttribute('data-title', 'مشروع جديد');
+
+          const img = document.createElement('img');
+          img.src = e.target.result;
+          img.alt = 'مشروع جديد';
+
+          link.appendChild(img);
+
+          // إدراج الصورة في بداية الشبكة
+          gallery.insertBefore(link, gallery.firstChild);
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+  </script>
+</body>
+</html>

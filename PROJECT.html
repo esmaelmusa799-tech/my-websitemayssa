@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>مشاريع الكروشيه</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Tahoma', sans-serif;
+      background-color: #fcf2ed; /* بيج غامق دافئ */
+      direction: rtl;
+      text-align: right;
+    }
+  
+    .hero {
+      position: relative;
+      height: 300px;
+      margin-bottom: 40px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      background-color: #f7cdd0; /* وردي ناعم */
+    }
+  
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: brightness(92%);
+    }
+  
+    .hero-content {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: #fff;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+    }
+  
+    .hero-content h1 {
+      font-size: 40px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: #fff;
+    }
+  
+    .hero-content p {
+      font-size: 18px;
+      color: #f0f0f0;
+    }
+  
+    .card-img-top {
+      height: 200px;
+      object-fit: cover;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+    }
+  
+    .card {
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+      transition: transform 0.2s ease;
+      background-color: #fbd3e0; /* وردي متوسط */
+    }
+  
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    }
+  
+    .details {
+      display: none;
+      margin-top: 15px;
+      padding: 15px;
+      background: #d6ecf3; /* بيبي بلو ناعم */
+      border-radius: 8px;
+      border: 1px solid #b5d7e0;
+    }
+  
+    .details.show {
+      display: block;
+    }
+  
+    .task {
+      margin-bottom: 8px;
+      background-color: #fce4ec; /* وردي فاتح */
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #e0b7c6;
+      transition: background-color 0.3s ease;
+    }
+  
+    .task:hover {
+      background-color: #f8bbd0; /* وردي أعمق عند التحويم */
+    }
+  
+    .btn-primary {
+      background-color: #ec699b; /* زر وردي قوي */
+      border: none;
+    }
+  
+    .btn-primary:hover {
+      background-color: #d85a8a;
+    }
+  
+    .progress-bar.bg-success {
+      background-color: #7ec4d8; /* بيبي بلو قوي */
+    }
+
+    /* تنسيق الأزرار */
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* مسافة بين الأزرار */
+  margin: 20px 0;
+}
+
+.nav-buttons a,
+.nav-buttons button {
+  background-color: #dcdcdc; /* رمادي فاتح */
+  color: #333;              /* نص داكن ليتباين */
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;    /* إزالة الخط تحت الرابط */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+/* تأثير عند التحويم */
+.nav-buttons a:hover,
+.nav-buttons button:hover {
+  background-color: #bfbfbf; /* رمادي أغمق قليلاً */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+/* عند الضغط */
+.nav-buttons a:active,
+.nav-buttons button:active {
+  transform: scale(0.97);
+}
+
+  </style>
+  
+</head>
+<body>
+
+  <!-- قسم العنوان مع صورة -->
+  <div class="container">
+    <div class="hero">
+      <img src="4.jfif" alt="خلفية كروشيه" />
+      <div class="hero-content">
+        <h1> مشاريع الكروشيه التعليمية</h1>
+        <p>اختر مشروعك من الشبكة وابدأ التعلم العملي خطوة بخطوة</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- شبكة المشاريع -->
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+      <!-- مشروع 1 -->
+      <div class="col">
+        <div class="card h-100">
+          <!-- الصورة هنا هي واجهة البطاقة -->
+          <img src="Q1.PNG" class="card-img-top" alt="صورة مشروع بطانية حسية للأطفال">
+      
+          <div class="card-body">
+            <h5 class="card-title">المشروع الاول : بطانية أطفال حسية بغرزة الحبية</h5>
+            <p class="card-text">
+              نبذة: مشروع عملي لتعلم كيفية عمل بطانية حسية للأطفال باستخدام غرزة الحبية (Bobble Stitch)،
+              مع خطوات واضحة لتكرار الغرزة وتكوين نسيج بارز ممتع وآمن للأطفال.
+            </p>
+            <div class="progress mb-2">
+              <div id="progress1" class="progress-bar bg-success" style="width:0%">0%</div>
+            </div>
+            <button class="btn btn-primary w-100" onclick="toggleDetails('details1')">بدء المشروع</button>
+      
+            <!-- تفاصيل المشروع الأكاديمية -->
+            <div id="details1" class="details">
+              <h6> المرحلة الأولى: تجهيز المواد</h6>
+              <ul>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress1','details1')"> اختيار خيط قطن أو صوف ناعم بألوان زاهية للأطفال (أصفر، أزرق، وردي).</li>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress1','details1')"> إبرة كروشيه مقاس 4–5 ملم.</li>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress1','details1')"> مقص + إبرة خياطة لإنهاء الأطراف.</li>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress1','details1')"> بطانة قماشية ناعمة (اختياري).</li>
+              </ul>
+      
+              <h6>✨ المرحلة الثانية: شرح غرزة الحبية</h6>
+              <p>
+                غرزة الحبية تعطي شكل بارز يشبه كرة صغيرة، مثالية للبطانيات الحسية.<br>
+                خطواتها: (لف الخيط، أدخل السنارة، اسحب الخيط، اسحب عبر حلقتين) × 4–5 مرات في نفس الغرزة، ثم اسحب الخيط عبر جميع الحلقات معًا.
+              </p>
+      
+              <h6>✨ المرحلة الثالثة: البداية</h6>
+              <ol>
+                <li><input type="checkbox" onchange="updateProgress('progress1','details1')"> اعمل سلسلة بطول عرض البطانية المطلوب (مثلاً 80–100 غرزة).</li>
+                <li><input type="checkbox" onchange="updateProgress('progress1','details1')"> الصف 1: غرزة حشو في كل غرزة لتثبيت الأساس.</li>
+              </ol>
+      
+              <h6>✨ المرحلة الرابعة: تكوين الحبيات</h6>
+              <ol>
+                <li><input type="checkbox" onchange="updateProgress('progress1','details1')"> الصف 2: غرزة حشو في أول غرزة.</li>
+                <li><input type="checkbox" onchange="updateProgress('progress1','details1')"> في الغرزة التالية، اعمل غرزة حبية.</li>
+                <li><input type="checkbox" onchange="updateProgress('progress1','details1')"> كرر (حشو + حبية) حتى نهاية الصف.</li>
+              </ol>
+      
+              <h6>✨ المرحلة الخامسة: الصفوف التالية</h6>
+              <ol>
+                <li><input type="checkbox" onchange="updateProgress('progress1','details1')"> الصف 3: غرزة حشو في كل غرزة لتثبيت الحبيات.</li>
+                <li><input type="checkbox" onchange="updateProgress('progress1','details1')"> كرر الصف 2 والصف 3 بالتناوب حتى يصل الطول المطلوب (80–100 سم).</li>
+              </ol>
+      
+              <h6>✨ المرحلة السادسة: التشطيب</h6>
+              <ul>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress1','details1')"> قص الخيط وثبته بإبرة خياطة.</li>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress1','details1')"> أضف حافة زخرفية بغرزة البيكو أو المروحة حول الأطراف.</li>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress1','details1')"> يمكن إضافة بطانة قماشية ناعمة من الداخل لمزيد من الراحة.</li>
+              </ul>
+      
+              <h6>📌 ملاحظات تعليمية</h6>
+              <p>
+                - غرزة الحبية تحتاج إلى شد خيط متوازن حتى تكون بارزة وواضحة.<br>
+                - البطانية الحسية مثالية للأطفال لأنها تجمع بين الدفء والملمس الممتع.<br>
+                - يمكنك استخدام ألوان متعددة لتكوين نمط جذاب.<br>
+                - المشروع يساعد المبتدئ على التدريب في دمج الغرز البارزة مع الغرز الأساسية.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+      <!-- مشروع 2 -->
+      <div class="col">
+        <div class="card h-100">
+          <!-- الصورة هنا هي واجهة البطاقة -->
+          <img src="Q2.PNG" class="card-img-top" alt="صورة مشروع حقيبة صغيرة">
+      
+          <div class="card-body">
+            <h5 class="card-title">المشروع الثاني : حقيبة صغيرة بغرزة القشرة</h5>
+            <p class="card-text">
+              نبذة: مشروع عملي لتعلم كيفية عمل حقيبة صغيرة أنيقة باستخدام غرزة القشرة،
+              مع خطوات واضحة لتشكيل القاعدة، الجوانب، والتجميع النهائي مع إضافة الحزام أو الزينة.
+            </p>
+            <div class="progress mb-2">
+              <div id="progress2" class="progress-bar bg-success" style="width:0%">0%</div>
+            </div>
+            <button class="btn btn-primary w-100" onclick="toggleDetails('details2')">بدء المشروع</button>
+      
+            <!-- تفاصيل المشروع الأكاديمية -->
+            <div id="details2" class="details">
+              <h6> المرحلة الأولى: تجهيز المواد</h6>
+              <ul>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress2','details2')"> اختيار خيط قطن أو صوف متوسط السمك بلون عملي (بيج، أسود، أو ملون).</li>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress2','details2')"> إبرة كروشيه مقاس 3.5–4 ملم.</li>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress2','details2')"> مقص + إبرة خياطة + زر أو رباط للتزيين.</li>
+              </ul>
+      
+              <h6>✨ المرحلة الثانية: قاعدة الحقيبة</h6>
+              <ol>
+                <li><input type="checkbox" onchange="updateProgress('progress2','details2')"> اعمل سلسلة بطول عرض الحقيبة المطلوب (مثلاً 40 غرزة).</li>
+                <li><input type="checkbox" onchange="updateProgress('progress2','details2')"> الصف 1: غرزة حشو في كل غرزة لتثبيت الأساس.</li>
+              </ol>
+      
+              <h6>✨ المرحلة الثالثة: غرزة القشرة</h6>
+              <ol>
+                <li><input type="checkbox" onchange="updateProgress('progress2','details2')"> الصف 2: في الغرزة الثالثة، اعمل 5 أعمدة بلفة (أول قشرة).</li>
+                <li><input type="checkbox" onchange="updateProgress('progress2','details2')"> تخطِّ غرزتين، ثم غرزة حشو في الغرزة التالية.</li>
+                <li><input type="checkbox" onchange="updateProgress('progress2','details2')"> كرر حتى نهاية الصف.</li>
+                <li><input type="checkbox" onchange="updateProgress('progress2','details2')"> الصفوف التالية: اعمل القشرة الجديدة داخل غرزة الحشو من الصف السابق.</li>
+              </ol>
+      
+              <h6>✨ المرحلة الرابعة: الطول المطلوب</h6>
+              <ul>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress2','details2')"> كرر الصفوف حتى يصل الطول إلى ضعف ارتفاع الحقيبة المطلوب (لتُطوى نصفين).</li>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress2','details2')"> يمكن تغيير اللون كل 4–5 صفوف لإضافة لمسة زخرفية.</li>
+              </ul>
+      
+              <h6>✨ المرحلة الخامسة: التجميع</h6>
+              <ul>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress2','details2')"> اطوِ القطعة نصفين لتكوين شكل الحقيبة.</li>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress2','details2')"> خيط الجانبين باستخدام غرزة الحشو أو غرزة منزلقة.</li>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress2','details2')"> أضف بطانة قماشية داخلية إذا رغبت.</li>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress2','details2')"> أضف زر أو رباط لإغلاق الحقيبة.</li>
+              </ul>
+      
+              <h6>✨ المرحلة السادسة: الحزام (اختياري)</h6>
+              <ul>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress2','details2')"> اعمل سلسلة طويلة بطول مناسب.</li>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress2','details2')"> صف واحد من الحشو أو الأعمدة لتقوية الحزام.</li>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress2','details2')"> ثبت الحزام على جانبي الحقيبة.</li>
+              </ul>
+      
+              <h6>📌 ملاحظات تعليمية</h6>
+              <p>
+                - غرزة القشرة سهلة وتعتمد على تكرار نفس النمط.<br>
+                - احرص على العد الصحيح للغرز حتى تكون القشور متناسقة.<br>
+                - الحقيبة مشروع مثالي للتدريب على الغرز الزخرفية.<br>
+                - يمكنك استخدام خيط سميك لتعطي الحقيبة قوة أكثر.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+      <!-- مشروع 3 -->
+      <div class="col">
+        <div class="card h-100">
+          <!-- الصورة هنا هي واجهة البطاقة -->
+          <img src="Q3.PNG" class="card-img-top" alt="صورة مشروع وسادة منزلية">
+      
+          <div class="card-body">
+            <h5 class="card-title">المشروع الثالث : وسادة منزلية بغرزة العنقودية</h5>
+            <p class="card-text">
+              نبذة: مشروع عملي لتعلم كيفية عمل وسادة منزلية زخرفية باستخدام غرزة العنقودية،
+              مع خطوات واضحة لتشكيل الوجه والظهر وتجميعهما في وسادة أنيقة.
+            </p>
+            <div class="progress mb-2">
+              <div id="progress3" class="progress-bar bg-success" style="width:0%">0%</div>
+            </div>
+            <button class="btn btn-primary w-100" onclick="toggleDetails('details3')">بدء المشروع</button>
+      
+            <!-- تفاصيل المشروع الأكاديمية -->
+            <div id="details3" class="details">
+              <h6> المرحلة الأولى: تجهيز المواد</h6>
+              <ul>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress3','details3')"> اختيار خيط قطن أو صوف متوسط السمك بألوان تناسب ديكور المنزل.</li>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress3','details3')"> إبرة كروشيه مقاس 4–5 ملم.</li>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress3','details3')"> وسادة داخلية جاهزة أو حشوة (فيبر/قطن صناعي).</li>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress3','details3')"> مقص + إبرة خياطة لإنهاء الأطراف.</li>
+              </ul>
+      
+              <h6>✨ المرحلة الثانية: غرزة العنقودية</h6>
+              <p>
+                غرزة العنقودية تتكون من دمج عدة أعمدة غير مكتملة في نفس الغرزة ثم إغلاقها معًا.<br>
+                مثال: (لف الخيط، أدخل السنارة، اسحب الخيط، اسحب عبر حلقتين) × 3 مرات، ثم اسحب الخيط عبر جميع الحلقات معًا.
+              </p>
+      
+              <h6>✨ المرحلة الثالثة: عمل الوجه الأمامي</h6>
+              <ol>
+                <li><input type="checkbox" onchange="updateProgress('progress3','details3')"> اعمل سلسلة بطول عرض الوسادة (مثلاً 40–50 غرزة).</li>
+                <li><input type="checkbox" onchange="updateProgress('progress3','details3')"> الصف 1: غرزة حشو في كل غرزة لتثبيت الأساس.</li>
+                <li><input type="checkbox" onchange="updateProgress('progress3','details3')"> الصف 2: غرزة عنقودية + سلسلة واحدة للفصل، كرر حتى نهاية الصف.</li>
+                <li><input type="checkbox" onchange="updateProgress('progress3','details3')"> الصفوف التالية: اعمل العنقودية داخل الفراغات بين الغرز السابقة حتى يصل الطول إلى حجم الوسادة.</li>
+              </ol>
+      
+              <h6>✨ المرحلة الرابعة: عمل الوجه الخلفي</h6>
+              <ul>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress3','details3')"> كرر نفس الخطوات لعمل قطعة ثانية بنفس الحجم.</li>
+              </ul>
+      
+              <h6>✨ المرحلة الخامسة: التجميع</h6>
+              <ul>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress3','details3')"> خيط القطعتين معًا باستخدام غرزة الحشو أو غرزة منزلقة.</li>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress3','details3')"> اترك جانبًا مفتوحًا لإدخال الوسادة الداخلية أو الحشوة.</li>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress3','details3')"> أغلق الجانب الأخير بعد إدخال الحشوة.</li>
+              </ul>
+      
+              <h6>✨ المرحلة السادسة: الزينة (اختياري)</h6>
+              <ul>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress3','details3')"> أضف حافة زخرفية بغرزة البيكو أو غرزة المروحة حول الأطراف.</li>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress3','details3')"> يمكن تغيير الألوان كل 5–6 صفوف لإعطاء شكل مخطط أو زخرفي.</li>
+              </ul>
+      
+              <h6>📌 ملاحظات تعليمية</h6>
+              <p>
+                - غرزة العنقودية تعطي ملمسًا سميكًا ومناسبًا للوسائد.<br>
+                - احرص على العد الصحيح للغرز حتى تكون القطعتان بنفس الحجم.<br>
+                - استخدم خيط قوي حتى تتحمل الوسادة الاستخدام اليومي.<br>
+                - المشروع مثالي للتدريب على دمج الغرز وإغلاقها معًا.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+
+      <!-- مشروع 4 -->
+      <div class="col">
+        <div class="card h-100">
+          <!-- الصورة هنا هي واجهة البطاقة -->
+          <img src="Q4.PNG" class="card-img-top" alt="صورة مشروع كوفية شتوية">
+      
+          <div class="card-body">
+            <h5 class="card-title">المشروع الرابع : كوفية شتوية بغرزة V</h5>
+            <p class="card-text">
+              نبذة: مشروع عملي لتعلم كيفية عمل كوفية شتوية أنيقة باستخدام غرزة V،
+              مع خطوات واضحة لتكرار الغرزة وتوسيع الطول والعرض حتى الشكل المطلوب.
+            </p>
+            <div class="progress mb-2">
+              <div id="progress4" class="progress-bar bg-success" style="width:0%">0%</div>
+            </div>
+            <button class="btn btn-primary w-100" onclick="toggleDetails('details4')">بدء المشروع</button>
+      
+            <!-- تفاصيل المشروع الأكاديمية -->
+            <div id="details4" class="details">
+              <h6> المرحلة الأولى: تجهيز المواد</h6>
+              <ul>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress4','details4')"> اختيار خيط صوف متوسط أو سميك بألوان شتوية (رمادي، أسود، أزرق داكن).</li>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress4','details4')"> إبرة كروشيه مقاس 4–5 ملم.</li>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress4','details4')"> مقص + إبرة خياطة لإنهاء الأطراف.</li>
+              </ul>
+      
+              <h6>✨ المرحلة الثانية: البداية بالسلسلة</h6>
+              <ol>
+                <li><input type="checkbox" onchange="updateProgress('progress4','details4')"> اعمل سلسلة بطول الكوفية المطلوب (150–180 سم تقريبًا).</li>
+                <li><input type="checkbox" onchange="updateProgress('progress4','details4')"> تأكد أن عدد الغرز زوجي ليسهل تكرار غرزة V.</li>
+              </ol>
+      
+              <h6>✨ المرحلة الثالثة: الصف الأول</h6>
+              <ol>
+                <li><input type="checkbox" onchange="updateProgress('progress4','details4')"> في الغرزة الرابعة من السنارة، اعمل غرزة V: (عمود بلفة + سلسلة + عمود بلفة).</li>
+                <li><input type="checkbox" onchange="updateProgress('progress4','details4')"> تخطِّ غرزة، ثم كرر غرزة V في الغرزة التالية.</li>
+                <li><input type="checkbox" onchange="updateProgress('progress4','details4')"> استمر حتى نهاية الصف.</li>
+              </ol>
+      
+              <h6>✨ المرحلة الرابعة: الصفوف التالية</h6>
+              <ol>
+                <li><input type="checkbox" onchange="updateProgress('progress4','details4')"> ابدأ كل صف بـ 3 سلاسل للارتفاع.</li>
+                <li><input type="checkbox" onchange="updateProgress('progress4','details4')"> اعمل غرزة V داخل الفراغ (السلسلة) من كل غرزة V في الصف السابق.</li>
+                <li><input type="checkbox" onchange="updateProgress('progress4','details4')"> كرر حتى تحصل على العرض المطلوب (20–30 سم).</li>
+              </ol>
+      
+              <h6>✨ المرحلة الخامسة: التشطيب</h6>
+              <ul>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress4','details4')"> عند الوصول للطول المطلوب، قص الخيط وثبته بإبرة خياطة.</li>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress4','details4')"> أضف شرابات (Tassels) على الأطراف لمظهر شتوي أنيق.</li>
+              </ul>
+      
+              <h6>📌 ملاحظات تعليمية</h6>
+              <p>
+                - غرزة V تتكون من (عمود بلفة + سلسلة + عمود بلفة) في نفس الغرزة أو الفراغ.<br>
+                - شد الخيط يجب أن يكون متوازنًا حتى تكون الغرز متناسقة.<br>
+                - الكوفية مشروع مثالي للتدريب على الغرز المكررة.<br>
+                - يمكنك تغيير اللون كل 6–8 صفوف لإضافة لمسة زخرفية.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- مشروع 5 -->
+      <div class="col">
+        <div class="card h-100">
+          <!-- الصورة هنا هي واجهة البطاقة -->
+          <img src="Q5.PNG" class="card-img-top" alt="صورة مشروع سترة صيفية">
+      
+          <div class="card-body">
+            <h5 class="card-title">المشروع الخامس : سترة صيفية واسعة بغرزة العمود بلفتين</h5>
+            <p class="card-text">
+              نبذة: مشروع عملي لتعلم كيفية عمل سترة صيفية واسعة وأنيقة باستخدام غرزة العمود بلفتين،
+              مع خطوات واضحة لتوسيع الدائرة، تقسيم فتحات الأذرع، وإكمال الطول المطلوب.
+            </p>
+            <div class="progress mb-2">
+              <div id="progress5" class="progress-bar bg-success" style="width:0%">0%</div>
+            </div>
+            <button class="btn btn-primary w-100" onclick="toggleDetails('details5')">بدء المشروع</button>
+      
+            <!-- تفاصيل المشروع الأكاديمية -->
+            <div id="details5" class="details">
+              <h6> المرحلة الأولى: تجهيز المواد</h6>
+              <ul>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress5','details5')"> اختيار خيط قطني خفيف بألوان صيفية (أبيض، بيج، باستيل).</li>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress5','details5')"> إبرة كروشيه مقاس 3.5–4 ملم.</li>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress5','details5')"> مقص + إبرة خياطة لإنهاء الأطراف.</li>
+              </ul>
+      
+              <h6>✨ المرحلة الثانية: البداية</h6>
+              <ol>
+                <li><input type="checkbox" onchange="updateProgress('progress5','details5')"> عمل حلقة سحرية (Magic Ring).</li>
+                <li><input type="checkbox" onchange="updateProgress('progress5','details5')"> الصف 1: 4 سلاسل (كأول عمود بلفتين) + 11 عمود بلفتين داخل الحلقة (المجموع 12 غرزة).</li>
+                <li><input type="checkbox" onchange="updateProgress('progress5','details5')"> أغلق بمنزلقة في أول سلسلة.</li>
+              </ol>
+      
+              <h6>✨ المرحلة الثالثة: التوسيع التدريجي</h6>
+              <ol>
+                <li><input type="checkbox" onchange="updateProgress('progress5','details5')"> الصف 2: 2 عمود بلفتين في كل غرزة → 24 غرزة.</li>
+                <li><input type="checkbox" onchange="updateProgress('progress5','details5')"> الصف 3: (1 عمود بلفتين + زيادة) × تكرار → 36 غرزة.</li>
+                <li><input type="checkbox" onchange="updateProgress('progress5','details5')"> الصف 4: (2 أعمدة بلفتين + زيادة) × تكرار → 48 غرزة.</li>
+                <li><input type="checkbox" onchange="updateProgress('progress5','details5')"> استمر بنفس النمط حتى يصل قطر الدائرة إلى 70–90 سم.</li>
+              </ol>
+      
+              <h6>✨ المرحلة الرابعة: فتحات الأذرع</h6>
+              <ul>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress5','details5')"> قسّم الدائرة إلى ثلاثة أقسام: ظهر + أمام يمين + أمام يسار.</li>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress5','details5')"> اترك فراغات جانبية (15–20 سلسلة) لتكون فتحات الأذرع.</li>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress5','details5')"> أكمل العمل بشكل دائري مع مراعاة هذه الفراغات.</li>
+                
+              </ul>
+      
+              <h6>✨ المرحلة الخامسة: الطول والاتساع</h6>
+              <ul>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress5','details5')"> استمر في إضافة صفوف من العمود بلفتين حتى يصل الطول إلى منتصف الفخذ أو الركبة.</li>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress5','details5')"> يمكن إضافة صفوف زخرفية (عمود بلفتين + سلسلة 1 + تخطي غرزة) لإعطاء مظهر شبكي صيفي.</li>
+              </ul>
+      
+              <h6>✨ المرحلة السادسة: التشطيب</h6>
+              <ul>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress5','details5')"> قص الخيط وثبته بإبرة خياطة.</li>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress5','details5')"> أضف حافة زخرفية بسيطة بغرزة الحشو أو غرزة البيكو حول الأطراف.</li>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress5','details5')"> يمكن إضافة زر صغير أو رباط في الأمام إذا رغبت.</li>
+              </ul>
+      
+              <h6>📌 ملاحظات تعليمية</h6>
+              <p>
+                - غرزة العمود بلفتين (TR): تلف الخيط مرتين على السنارة، أدخلها في الغرزة، اسحب الخيط، ثم اسحب الخيط عبر حلقتين، ثم حلقتين، ثم حلقتين.<br>
+                - الزيادة: ضع غرزتين في نفس الغرزة.<br>
+                - عند عمل فتحات الأذرع، تأكد من العد الصحيح حتى تكون متساوية.<br>
+                - السترة تعتمد على التوسيع المنتظم للدائرة، لذلك العد مهم جدًا.<br>
+                - استخدام خيط قطني خفيف يجعل السترة مناسبة للأجواء الصيفية.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- مشروع 6 -->
+      <div class="col">
+        <div class="card h-100">
+          <!-- الصورة هنا هي واجهة البطاقة -->
+          <img src="Q6.PNG" class="card-img-top" alt="صورة مشروع مفرش دائري">
+      
+          <div class="card-body">
+            <h5 class="card-title">المشروع السادس : مفرش مائدة دائري بغرزة العمود بلفة</h5>
+            <p class="card-text">
+              نبذة: مشروع عملي لتعلم كيفية عمل مفرش دائري أنيق باستخدام غرزة العمود بلفة،
+              مع خطوات واضحة لتوسيع الدائرة تدريجيًا حتى الوصول للحجم المطلوب.
+            </p>
+            <div class="progress mb-2">
+              <div id="progress6" class="progress-bar bg-success" style="width:0%">0%</div>
+            </div>
+            <button class="btn btn-primary w-100" onclick="toggleDetails('details6')">بدء المشروع</button>
+      
+            <!-- تفاصيل المشروع الأكاديمية -->
+            <div id="details6" class="details">
+              <h6> المرحلة الأولى: تجهيز المواد</h6>
+              <ul>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress6','details6')"> اختيار خيط قطن متوسط أو رفيع (ألوان فاتحة أو بيضاء).</li>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress6','details6')"> إبرة كروشيه مقاس 2.5–3.5 ملم.</li>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress6','details6')"> مقص + إبرة خياطة لإنهاء الأطراف.</li>
+              </ul>
+      
+              <h6>✨ المرحلة الثانية: البداية</h6>
+              <ol>
+                <li><input type="checkbox" onchange="updateProgress('progress6','details6')"> عمل حلقة سحرية (Magic Ring).</li>
+                <li><input type="checkbox" onchange="updateProgress('progress6','details6')"> الصف 1: 3 سلاسل (كأول عمود بلفة) + 11 عمود بلفة داخل الحلقة (المجموع 12 غرزة).</li>
+                <li><input type="checkbox" onchange="updateProgress('progress6','details6')"> أغلق بمنزلقة في أول سلسلة.</li>
+              </ol>
+      
+              <h6>✨ المرحلة الثالثة: التوسيع التدريجي</h6>
+              <ol>
+                <li><input type="checkbox" onchange="updateProgress('progress6','details6')"> الصف 2: 2 عمود بلفة في كل غرزة → 24 غرزة.</li>
+                <li><input type="checkbox" onchange="updateProgress('progress6','details6')"> الصف 3: (1 عمود بلفة + زيادة) × تكرار → 36 غرزة.</li>
+                <li><input type="checkbox" onchange="updateProgress('progress6','details6')"> الصف 4: (2 أعمدة بلفة + زيادة) × تكرار → 48 غرزة.</li>
+                <li><input type="checkbox" onchange="updateProgress('progress6','details6')"> الصف 5: (3 أعمدة بلفة + زيادة) × تكرار → 60 غرزة.</li>
+                <li><input type="checkbox" onchange="updateProgress('progress6','details6')"> استمر بنفس النمط: كل صف تضيف عمودًا منفردًا إضافيًا قبل الزيادة.</li>
+              </ol>
+      
+              <h6>✨ المرحلة الرابعة: الحافة (Border)</h6>
+              <ul>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress6','details6')"> صف أخير من غرزة الحشو لتثبيت الشكل.</li>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress6','details6')"> أو صف زخرفي: (حشو + سلسلة 3 + تخطي غرزة) لتكوين شكل مخرم.</li>
+              </ul>
+      
+              <h6>📌 ملاحظات تعليمية</h6>
+              <p>
+                - غرزة العمود بلفة (DC): تلف الخيط على السنارة، أدخلها في الغرزة، اسحب الخيط، ثم اسحب الخيط عبر حلقتين، ثم عبر الحلقتين المتبقيتين.<br>
+                - الزيادة: ضع غرزتين في نفس الغرزة.<br>
+                - التوازن مهم: إذا لم تضف زيادات منتظمة، سيلتف المفرش أو يتجعد.<br>
+                - الأفضل استخدام خيط قطن رفيع ليكون المفرش مسطحًا وأنيقًا.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+      <!-- مشروع 7 -->
+      <div class="col">
+        <div class="card h-100">
+          <!-- الصورة هنا هي واجهة البطاقة -->
+          <img src="Q7.PNG" class="card-img-top" alt="صورة مشروع حذاء أطفال">
+      
+          <div class="card-body">
+            <h5 class="card-title">المشروع السابع : حذاء أطفال بغرزة نصف العمود</h5>
+            <p class="card-text">
+              نبذة: مشروع عملي لتعلم كيفية عمل حذاء أطفال لطيف باستخدام غرزة نصف العمود (HDC)،
+              مع خطوات واضحة لتشكيل القاعدة والجدار والمقدمة والتشطيب النهائي.
+            </p>
+            <div class="progress mb-2">
+              <div id="progress7" class="progress-bar bg-success" style="width:0%">0%</div>
+            </div>
+            <button class="btn btn-primary w-100" onclick="toggleDetails('details7')">بدء المشروع</button>
+      
+            <!-- تفاصيل المشروع الأكاديمية -->
+            <div id="details7" class="details">
+              <h6> المرحلة الأولى: تجهيز المواد</h6>
+              <ul>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress7','details7')"> اختيار خيط قطن أو صوف ناعم بألوان مناسبة للأطفال.</li>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress7','details7')"> إبرة كروشيه مقاس 3.5–4 ملم.</li>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress7','details7')"> مقص + إبرة خياطة لإنهاء الأطراف.</li>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress7','details7')"> زر صغير أو شريط للتزيين (اختياري).</li>
+              </ul>
+      
+              <h6>✨ المرحلة الثانية: قاعدة الحذاء (Sole)</h6>
+              <ol>
+                <li><input type="checkbox" onchange="updateProgress('progress7','details7')"> اصنع سلسلة من 10–12 غرزة (حسب مقاس الطفل).</li>
+                <li><input type="checkbox" onchange="updateProgress('progress7','details7')"> الصف 1: غرزة نصف عمود في كل غرزة حتى النهاية.</li>
+                <li><input type="checkbox" onchange="updateProgress('progress7','details7')"> عند آخر غرزة ضع 3 غرز نصف عمود لتكوين دوران.</li>
+                <li><input type="checkbox" onchange="updateProgress('progress7','details7')"> أكمل على الجانب الآخر بغرزة نصف عمود في كل غرزة.</li>
+                <li><input type="checkbox" onchange="updateProgress('progress7','details7')"> الصف 2: كرر مع زيادات في الأطراف لتكوين شكل بيضاوي.</li>
+              </ol>
+      
+              <h6>✨ المرحلة الثالثة: جدار الحذاء (Sides)</h6>
+              <ol>
+                <li><input type="checkbox" onchange="updateProgress('progress7','details7')"> الصف 3: نصف عمود في الحلقة الخلفية فقط (Back Loop Only) حول القاعدة.</li>
+                <li><input type="checkbox" onchange="updateProgress('progress7','details7')"> الصف 4–6: نصف عمود في كل غرزة بدون زيادات لتشكيل ارتفاع الجدار.</li>
+              </ol>
+      
+              <h6>✨ المرحلة الرابعة: مقدمة الحذاء (Toe)</h6>
+              <ol>
+                <li><input type="checkbox" onchange="updateProgress('progress7','details7')"> الصف 7: نصف عمود حتى منتصف الصف، ثم تناقص (HDC2tog) في الغرز الأمامية.</li>
+                <li><input type="checkbox" onchange="updateProgress('progress7','details7')"> الصف 8: كرر التناقص في المقدمة حتى تغلق الفتحة تدريجيًا.</li>
+              </ol>
+      
+              <h6>✨ المرحلة الخامسة: التشطيب</h6>
+              <ul>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress7','details7')"> قص الخيط وثبته بإبرة خياطة.</li>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress7','details7')"> أضف زر صغير أو شريط للتزيين حسب الرغبة.</li>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress7','details7')"> كرر نفس الخطوات لعمل الحذاء الثاني.</li>
+              </ul>
+      
+              <h6>📌 ملاحظات تعليمية</h6>
+              <p>
+                - غرزة نصف العمود (HDC): تلف الخيط على السنارة، أدخلها في الغرزة، اسحب الخيط، ثم اسحب الخيط عبر الثلاث حلقات.<br>
+                - الزيادات: ضع غرزتين في نفس الغرزة.<br>
+                - التناقص (HDC2tog): دمج غرزتين نصف عمود معًا لتقليل العدد.<br>
+                - احرص على العد الصحيح للغرز حتى يكون الحذاء متناسقًا.<br>
+                - استخدم خيط ناعم ليكون الحذاء مريحًا للطفل.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+      <!-- مشروع 8 -->
+      <div class="col">
+        <div class="card h-100">
+          <!-- الصورة هنا هي واجهة البطاقة -->
+          <img src="Q8.PNG" class="card-img-top" alt="صورة مشروع شال رجالي">
+      
+          <div class="card-body">
+            <h5 class="card-title">المشروع الثامن: شال رجالي بغرزة السلسلة</h5>
+            <p class="card-text">
+              نبذة: مشروع عملي لتعلم كيفية عمل شال رجالي أنيق باستخدام غرزة السلسلة كأساس،
+              مع دمجها بغرزة الحشو لتكوين نسيج متماسك وفخم مناسب للمبتدئين.
+            </p>
+            <div class="progress mb-2">
+              <div id="progress8" class="progress-bar bg-success" style="width:0%">0%</div>
+            </div>
+            <button class="btn btn-primary w-100" onclick="toggleDetails('details8')">بدء المشروع</button>
+      
+            <!-- تفاصيل المشروع الأكاديمية -->
+            <div id="details8" class="details">
+              <h6> المرحلة الأولى: تجهيز المواد</h6>
+              <ul>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress8','details8')"> اختيار خيط صوف متوسط أو سميك (ألوان رجالية مثل الرمادي أو الأزرق الداكن).</li>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress8','details8')"> إبرة كروشيه مقاس 4–5 ملم.</li>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress8','details8')"> مقص + إبرة خياطة لإنهاء الأطراف.</li>
+              </ul>
+      
+              <h6>✨ المرحلة الثانية: البداية بالسلسلة</h6>
+              <ol>
+                <li><input type="checkbox" onchange="updateProgress('progress8','details8')"> اصنع سلسلة أساسية بطول الشال المطلوب (150–180 سم تقريبًا).</li>
+                <li><input type="checkbox" onchange="updateProgress('progress8','details8')"> تأكد أن عدد الغرز زوجي ليسهل التكرار.</li>
+              </ol>
+      
+              <h6>✨ المرحلة الثالثة: الصف الأول</h6>
+              <ol>
+                <li><input type="checkbox" onchange="updateProgress('progress8','details8')"> في الغرزة الثانية من السنارة، اعمل غرزة حشو.</li>
+                <li><input type="checkbox" onchange="updateProgress('progress8','details8')"> كرر غرزة الحشو في كل غرزة سلسلة حتى نهاية الصف.</li>
+              </ol>
+      
+              <h6>✨ المرحلة الرابعة: الصفوف التالية</h6>
+              <ol>
+                <li><input type="checkbox" onchange="updateProgress('progress8','details8')"> ابدأ كل صف بسلسلة واحدة للارتفاع.</li>
+                <li><input type="checkbox" onchange="updateProgress('progress8','details8')"> اعمل غرزة حشو في كل غرزة من الصف السابق.</li>
+                <li><input type="checkbox" onchange="updateProgress('progress8','details8')"> كرر حتى تحصل على العرض المطلوب (25–35 سم).</li>
+              </ol>
+      
+              <h6>✨ المرحلة الخامسة: التشطيب</h6>
+              <ul>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress8','details8')"> عند الوصول للطول المناسب، قص الخيط وثبته بإبرة خياطة.</li>
+                <li class="task"><input type="checkbox" onchange="updateProgress('progress8','details8')"> أضف شرابات (Tassels) على الأطراف لمظهر رجالي أنيق.</li>
+              </ul>
+      
+              <h6>📌 ملاحظات تعليمية</h6>
+              <p>
+                - غرزة السلسلة هي الأساس، لكن دمجها مع الحشو يعطي نسيجًا متماسكًا.<br>
+                - شد الخيط يجب أن يكون متوازنًا.<br>
+                - يمكن تغيير اللون كل 10–15 صف لإضافة لمسة زخرفية.<br>
+                - هذا المشروع مثالي للمبتدئين لأنه يعتمد على تكرار بسيط ومنظم.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+      <!-- مشروع 9 -->
+      <div class="col">
+        <div class="card h-100">
+          <!-- الصورة هنا هي واجهة البطاقة -->
+          <img src="Q9.PNG" class="card-img-top" alt="صورة مشروع دمية كروشيه">
+      
+          <div class="card-body">
+            <h5 class="card-title">المشروع التاسع: دمية كروشيه بغرزة الحشو</h5>
+            <p class="card-text">
+              نبذة: مشروع عملي لتعلم أساسيات الأميجرومي (Amigurumi) باستخدام غرزة الحشو فقط،
+              مع خطوات واضحة لتشكيل الرأس والجسم والأطراف وتجميعها في دمية صغيرة.
+            </p>
+            <div class="progress mb-2">
+              <div id="progress9" class="progress-bar bg-success" style="width:0%">0%</div>
+            </div>
+            <button class="btn btn-primary w-100" onclick="toggleDetails('details9')">بدء المشروع</button>
+      
+            <!-- تفاصيل المشروع الأكاديمية -->
+            <div id="details9" class="details">
+              <h6>المرحلة الأولى: تجهيز المواد</h6>
+              <ul>
+                <li class="task">
+                  <input type="checkbox" onchange="updateProgress('progress9','details9')"> خيط قطن متوسط السمك (لون للجسم + لون إضافي)
+                </li>
+                <li class="task">
+                  <input type="checkbox" onchange="updateProgress('progress9','details9')"> إبرة كروشيه مقاس 3.5–4 ملم
+                </li>
+                <li class="task">
+                  <input type="checkbox" onchange="updateProgress('progress9','details9')"> حشوة (فيبر أو قطن صناعي)
+                </li>
+                <li class="task">
+                  <input type="checkbox" onchange="updateProgress('progress9','details9')"> مقص + إبرة خياطة + عيون أمان
+                </li>
+              </ul>
+      
+              <h6>✨ المرحلة الثانية: عمل الرأس</h6>
+              <ol>
+                <li><input type="checkbox" onchange="updateProgress('progress9','details9')"> الصف 1: حلقة سحرية + 6 غرز حشو.</li>
+                <li><input type="checkbox" onchange="updateProgress('progress9','details9')"> الصف 2: زيادة في كل غرزة → 12 غرزة.</li>
+                <li><input type="checkbox" onchange="updateProgress('progress9','details9')"> الصف 3: (1 حشو + زيادة) × 6 → 18 غرزة.</li>
+                <li><input type="checkbox" onchange="updateProgress('progress9','details9')"> الصف 4: (2 حشو + زيادة) × 6 → 24 غرزة.</li>
+                <li><input type="checkbox" onchange="updateProgress('progress9','details9')"> الصف 5–8: حشو ثابت 24 غرزة.</li>
+                <li><input type="checkbox" onchange="updateProgress('progress9','details9')"> الصف 9–11: تناقص تدريجي حتى 6 غرز مع الحشو بالفيبر.</li>
+              </ol>
+      
+              <h6>✨ المرحلة الثالثة: عمل الجسم</h6>
+              <ol>
+                <li><input type="checkbox" onchange="updateProgress('progress9','details9')"> الصف 1: حلقة سحرية 6 غرز حشو.</li>
+                <li><input type="checkbox" onchange="updateProgress('progress9','details9')"> الصف 2–3: زيادات حتى 18 غرزة.</li>
+                <li><input type="checkbox" onchange="updateProgress('progress9','details9')"> الصف 4–10: حشو ثابت 18 غرزة.</li>
+                <li><input type="checkbox" onchange="updateProgress('progress9','details9')"> الصف 11–14: تناقص تدريجي حتى 12 غرزة مع الحشو.</li>
+              </ol>
+      
+              <h6>✨ المرحلة الرابعة: عمل الأطراف</h6>
+              <ul>
+                <li><input type="checkbox" onchange="updateProgress('progress9','details9')"> اليدين: حلقة سحرية 6 غرز حشو، ثم 4 صفوف حشو ثابت.</li>
+                <li><input type="checkbox" onchange="updateProgress('progress9','details9')"> الرجلين: حلقة سحرية 6 غرز حشو، الصف 2 زيادات حتى 12 غرزة، ثم 6 صفوف حشو ثابت.</li>
+              </ul>
+      
+              <h6>✨ المرحلة الخامسة: التجميع النهائي</h6>
+              <ul>
+                <li><input type="checkbox" onchange="updateProgress('progress9','details9')"> خياطة الرأس مع الجسم.</li>
+                <li><input type="checkbox" onchange="updateProgress('progress9','details9')"> تثبيت اليدين على الجانبين.</li>
+                <li><input type="checkbox" onchange="updateProgress('progress9','details9')"> تثبيت الرجلين أسفل الجسم.</li>
+                <li><input type="checkbox" onchange="updateProgress('progress9','details9')"> إضافة العيون أو تطريزها بالخيط.</li>
+                <li><input type="checkbox" onchange="updateProgress('progress9','details9')"> إضافة الشعر أو القبعة حسب الرغبة.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="nav-buttons">
+          <a href="LESSON.html" class="btn btn-primary">السابق</a>
+          <a href="CALLERY.html" class="btn btn-primary">التالي</a>
+        </div>
+        
+    </div>
+  </div>
+
+  <!-- سكربت في نهاية الصفحة -->
+  <script>
+    function toggleDetails(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.classList.toggle('show'); // يعتمد على CSS: .details.show { display:block; }
+    }
+
+    function updateProgress(progressId, detailsId) {
+      const details = document.getElementById(detailsId);
+      if (!details) return;
+      const checkboxes = details.querySelectorAll("input[type='checkbox']");
+      const done = Array.from(checkboxes).filter(cb => cb.checked).length;
+      const percent = checkboxes.length ? Math.round((done / checkboxes.length) * 100) : 0;
+      const bar = document.getElementById(progressId);
+      if (bar) {
+        bar.style.width = percent + "%";
+        bar.textContent = percent + "%";
+        bar.setAttribute("aria-valuenow", String(percent));
+      }
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>Crochet Studio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- أيقونة PNG قياسية -->
+<link rel="shortcut icon" href="QW.PNG" sizes="32x32">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Cairo',sans-serif}
+
+:root{
+--pink:#F2B6C6;
+--peach:#F7C1A3;
+--apricot:#F4A896;
+--babyblue:#BFD7EA;
+--cream:#FFF7F2;
+--text:#4A3F3F;
+}
+
+body{
+height:100vh;
+overflow:hidden;
+background:linear-gradient(135deg,var(--babyblue),var(--cream),var(--peach));
+color:var(--text);
+}
+
+/* Navbar */
+.navbar{
+height:8vh;
+background:rgba(255,255,255,.35);
+backdrop-filter:blur(6px);
+}
+.navbar .container{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 8%;
+}
+.navbar a,.navbar strong{
+color:#4A4A57;
+font-size:1.1rem;
+font-weight:600;
+margin-left:20px;
+text-decoration:none;
+}
+
+/* Hero */
+.hero-slider{
+height:42vh;
+background-size:cover;
+background-position:center;
+transition:1s;
+}
+.hero-overlay{
+height:100%;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+.hero-overlay h1{
+color:#fff;
+font-size:3rem;
+font-weight:800;
+text-shadow:2px 2px 8px rgba(0,0,0,.6);
+}
+
+/* Patterns */
+.patterns{
+height:42vh;
+padding:20px 6%;
+}
+.patterns h2{
+text-align:center;
+margin-bottom:14px;
+}
+.pattern-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap:18px;
+}
+
+.pattern-card{
+cursor:pointer;
+border-radius:22px;
+overflow:hidden;
+box-shadow:0 18px 35px rgba(0,0,0,.12);
+background:linear-gradient(135deg,var(--pink),var(--peach));
+}
+.pattern-card img{
+height:120px;
+width:100%;
+object-fit:cover;
+}
+.pattern-content{
+padding:12px;
+text-align:center;
+background:linear-gradient(135deg,var(--apricot),var(--babyblue));
+}
+.pattern-content h3{font-size:16px}
+
+/* Modal */
+.modal{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.6);
+display:none;
+align-items:center;
+justify-content:center;
+z-index:999;
+}
+.modal.active{display:flex}
+
+.modal-box{
+width:460px;
+max-width:90%;
+background:linear-gradient(135deg,var(--cream),var(--babyblue));
+border-radius:22px;
+padding:25px;
+position:relative;
+animation:zoom .3s ease;
+}
+@keyframes zoom{from{transform:scale(.8);opacity:0}to{transform:scale(1);opacity:1}}
+
+.close-btn{
+position:absolute;
+top:10px;
+left:15px;
+font-size:26px;
+cursor:pointer;
+}
+
+.stars{
+margin:10px 0;
+color:#e6a700;
+font-size:18px;
+}
+
+.steps{
+text-align:right;
+font-size:14px;
+margin:12px 0;
+}
+.steps li{margin-bottom:6px}
+
+video{
+width:100%;
+border-radius:12px;
+margin-top:10px;
+}
+
+.nav-buttons{
+display:flex;
+justify-content:space-between;
+margin-top:15px;
+}
+.nav-buttons button{
+border:none;
+padding:8px 18px;
+border-radius:8px;
+background:var(--pink);
+cursor:pointer;
+font-weight:600;
+}
+
+footer{
+height:8vh;
+background:rgba(255,255,255,.35);
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+/* ✅ Media Queries لجعل الموقع متجاوب */
+@media (max-width: 992px) {
+  .hero-overlay h1 { font-size: 2.2rem; }
+  .pattern-card img { height: 100px; }
+}
+
+@media (max-width: 768px) {
+  .navbar .container { flex-direction: column; padding: 10px; }
+  .navbar a { margin: 10px; font-size: 1rem; }
+  .hero-slider { height: 36vh; }
+  .hero-overlay h1 { font-size: 1.8rem; }
+  .patterns { height: auto; }
+  .pattern-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .navbar .container { flex-direction: column; }
+  .navbar a { font-size: 0.9rem; }
+  .hero-slider { height: 30vh; }
+  .hero-overlay h1 { font-size: 1.4rem; text-align:center; }
+  .pattern-grid { grid-template-columns: 1fr; }
+  .pattern-card img { height: 90px; }
+  .nav-buttons button { width: 100%; margin-top: 8px; }
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+<div class="container">
+<strong>تعلم الكروشيه</strong>
+<div>
+<a href="LESSON.HTML">الدروس</a>
+<a href="PROJECT.HTML">المشاريع</a>
+<a href="CALLERY.HTML">المعرض</a>
+<a href="MASEG.HTML">اتصل بنا</a>
+</div>
+</div>
+</nav>
+
+<section class="hero-slider" id="hero">
+<div class="hero-overlay">
+<h1 id="heroText">فن الكروشيه الأنيق</h1>
+</div>
+</section>
+
+<section class="patterns">
+<h2>أحدث الباترنس</h2>
+<div class="pattern-grid">
+<div class="pattern-card" onclick="openModal(0)"><img src="1.png"><div class="pattern-content"><h3>غرزة السلسلة</h3></div></div>
+<div class="pattern-card" onclick="openModal(1)"><img src="2.png"><div class="pattern-content"><h3>غرزة العمود</h3></div></div>
+<div class="pattern-card" onclick="openModal(2)"><img src="3.png"><div class="pattern-content"><h3>مربع الجدة</h3></div></div>
+<div class="pattern-card" onclick="openModal(3)"><img src="4.png"><div class="pattern-content"><h3>غرزة الحشو</h3></div></div>
+<div class="pattern-card" onclick="openModal(4)"><img src="5.png"><div class="pattern-content"><h3>غرزة الصدفة</h3></div></div>
+<div class="pattern-card" onclick="openModal(5)"><img src="6.png"><div class="pattern-content"><h3>غرزة الباف</h3></div></div>
+</div>
+</section>
+
+<footer>© 2025 Crochet Studio</footer>
+
+<!-- Modal -->
+<div class="modal" id="modal" onclick="closeOutside(event)">
+<div class="modal-box">
+<span class="close-btn" onclick="closeModal()">×</span>
+<h3 id="title"></h3>
+<div class="stars" id="stars"></div>
+<ul class="steps" id="steps"></ul>
+<video controls id="video"></video>
+<div class="nav-buttons">
+<button onclick="prev()">السابق</button>
+<button onclick="next()">التالي</button>
+</div>
+</div>
+</div>
+
+<script>
+const slides=[
+{text:"فن الكروشيه الأنيق",image:"!.jfif"},
+{text:"إبداع يدوي ساحر",image:"%.jfif"},
+{text:"تصاميم حديثة واحترافية",image:"1.jfif"}
+];
+let s=0;
+const hero=document.getElementById("hero");
+const heroText=document.getElementById("heroText");
+hero.style.backgroundImage=`url('${slides[0].image}')`;
+setInterval(()=>{
+s=(s+1)%slides.length;
+hero.style.backgroundImage=`url('${slides[s].image}')`;
+heroText.textContent=slides[s].text;
+},4000);
+
+/* Pattern Data */
+const data=[
+{
+title:"غرزة السلسلة",
+stars:1,
+steps:["عمل عقدة البداية","سحب الخيط","تكرار السحب"],
+video:"chain.mp4"
+},
+{
+title:"غرزة العمود",
+stars:2,
+steps:["لف الخيط","إدخال الإبرة","سحب الخيط"],
+video:"double.mp4"
+},
+{
+title:"مربع الجدة",
+stars:3,
+steps:["تكوين حلقة","غرز أعمدة","تكرار الزوايا"],
+video:"granny.mp4"
+},
+{
+title:"غرزة الحشو",
+stars:2,
+steps:["ابدأ بسلسلة الأساس","ادخل الإبرة في الغرزة","اسحب الخيط وأكمل الغرزة","كرر العملية لكل غرزة"],
+video:"hushw.mp4"
+},
+{
+title:"غرزة الصدفة",
+stars:3,
+steps:["تكوين قاعدة","عمل أعمدة متتالية","تشكيل الصدفة"],
+video:"shell.mp4"
+},
+{
+title:"غرزة الباف",
+stars:2,
+steps:[ "ابدأ بسلسلة البداية", "اعمل عمود مزدوج داخل نفس الحلقة","كرر العمود المزدوج على السلسلة التالية","اغلق الغرزة بالشكل المطلوب"],
+  video: "puff.mp4"
+}
+];
+
+let current=0;
+
+function openModal(i){
+current=i;
+render();
+document.getElementById("modal").classList.add("active");
+}
+
+function render(){
+document.getElementById("title").textContent=data[current].title;
+document.getElementById("stars").textContent="★".repeat(data[current].stars)+"☆".repeat(3-data[current].stars);
+document.getElementById("steps").innerHTML=data[current].steps.map(s=>`<li>${s}</li>`).join("");
+document.getElementById("video").src=data[current].video;
+}
+
+function closeModal(){
+document.getElementById("modal").classList.remove("active");
+document.getElementById("video").pause();
+}
+
+function closeOutside(e){
+if(e.target.id==="modal") closeModal();
+}
+
+function next(){current=(current+1)%data.length;render()}
+function prev(){current=(current-1+data.length)%data.length;render()}
+
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
+</script>
+
+</body>
+</html>
